@@ -1,0 +1,23 @@
+name: 'MonoCloud Detect Changes'
+description: 'Gets a list of files that were changed in a push'
+author: 'MonoCloud'
+
+inputs:
+  paths:
+    description: 'Paths to check'
+    required: true
+    default: ''
+  token:
+    description: 'Github Token'
+    required: true
+    default: ''
+
+outputs:
+  changed:
+    description: 'Returns true if any files matching any of the paths have changed'
+  changed_files:
+    description: 'List of files changed separated with space'
+
+runs:
+  using: node20
+  main: dist/index.js
